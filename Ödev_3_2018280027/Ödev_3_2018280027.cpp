@@ -1,7 +1,7 @@
 #include <iostream>
 #include<fstream>
 
-// Haþim Ensar KAVAK 2018280027
+// HaÃ¾im Ensar KAVAK 2018280027
 
 using namespace std;
 int main()
@@ -15,7 +15,7 @@ int main()
     int sayac = cvp.length();
     char cvpa[100];
     int i = 0, j = 0;
-    while (i < sayac)          //Cevap anahtarindaki "," lerden kurtulmak için yaptim.
+    while (i < sayac)          //Cevap anahtarindaki "," lerden kurtulmak iÃ§in yaptim.
     {
         cvpa[j] = cvp[i];
         i += 2;
@@ -33,19 +33,19 @@ int main()
     string ogrNo[100];
     string ogrCvp[100];
   
-    while (oku) //input.txt de 1. sütunu ogrNo dizine 2. sütunu ogrCvp dizine attim.
+    while (oku) //input.txt de 1. sÃ¼tunu ogrNo dizine 2. sÃ¼tunu ogrCvp dizine attim.
     {
         oku >> ogrNo[ogrSayisi] >> ogrCvp[ogrSayisi]; 
         ogrSayisi++;
     }
    
 
-    int puan[100] = {0};
-    int dogru[100] = {0};
-    int yanlis[100]= { 0 };
-    int bos[100]= { 0 };
+    int puan[ogrSayisi-1] = {0};
+    int dogru[ogrSayisi-1] = {0};
+    int yanlis[ogrSayisi-1]= { 0 };
+    int bos[ogrSayisi-1]= { 0 };
     int x = 0;
-    for (i = 0; i < ogrSayisi-1; i++) // öðrencilerin doðru yaniþ bos sayilarini tuttum.
+    for (i = 0; i < ogrSayisi-1; i++) // Ã¶Ã°rencilerin doÃ°ru yaniÃ¾ bos sayilarini tuttum.
     {
 
         x = 0;
@@ -72,23 +72,23 @@ int main()
         }
     }
 
-    cout << "Ogrencilerin Puanlari: (max 40 puan)"<<endl; //örnekteki gibi 40 puan üzerinden sinav.
+    cout << "Ogrencilerin Puanlari: (max 40 puan)"<<endl; //Ã¶rnekteki gibi 40 puan Ã¼zerinden sinav.
     int q = 0;
     while (q < ogrSayisi - 1)
     {
-        puan[q] = dogru[q] * 4; //dogrular +4 yanliþlar -1.
+        puan[q] = dogru[q] * 4; //dogrular +4 yanliÃ¾lar -1.
         puan[q] = puan[q] + yanlis[q] * -1;
 
         if (puan[q] < 0)
         {
-            puan[q] = 0;// negatif bir sonuç olmamasi için.
+            puan[q] = 0;// negatif bir sonuÃ§ olmamasi iÃ§in.
         }
         cout <<ogrNo[q]<<" "<< puan[q] << endl;
         q++;
     }
     int temp;
     string tutucu;
-    for ( i = 0; i < ogrSayisi-1; i++) // siralama yaptirdim ,öðrenci numaralarinida puanlara göre siralattim.
+    for ( i = 0; i < ogrSayisi-1; i++) // siralama yaptirdim ,Ã¶Ã°renci numaralarinida puanlara gÃ¶re siralattim.
     { 
         for ( j = i + 1; j < ogrSayisi-1; j++) 
         {
@@ -106,7 +106,7 @@ int main()
     int enKucuk = 0;
     for (i = 0; i < ogrSayisi - 1; i++)
     {
-        if (puan[i] < enKucuk) //En düþük puani buldum.
+        if (puan[i] < enKucuk) //En dÃ¼Ã¾Ã¼k puani buldum.
         {
             enKucuk = puan[i];
         }
@@ -122,7 +122,7 @@ int main()
     
     int medyan ;
     int s1= 0,s2=0,s3=0;
-    if ((ogrSayisi - 1) % 2 == 0) // medyan hesaplattim.(tek sayilik dizi ve çift sayilik dizi için)
+    if ((ogrSayisi - 1) % 2 == 0) // medyan hesaplattim.(tek sayilik dizi ve Ã§ift sayilik dizi iÃ§in)
     {
         s1 = ((ogrSayisi - 1) / 2)-1;
         s2 = ((ogrSayisi - 1) / 2);
@@ -135,13 +135,13 @@ int main()
     }
    
     int aciklik;
-    aciklik = puan[0] - enKucuk;// puan[0] da en büyük puan tutuluyor
+    aciklik = puan[0] - enKucuk;// puan[0] da en bÃ¼yÃ¼k puan tutuluyor
    
     oku.close();
 
     ofstream output("output.txt");
     i = 0;
-    output << "Ögrencilerin Notlara Göre Sýrasý:" << endl;
+    output << "Ã–grencilerin Notlara GÃ¶re SÃ½rasÃ½:" << endl;
     output << "*********************************" << endl;
     output << "    Ogrenci No   Puan"<<endl;
     while (i < ogrSayisi - 1)
