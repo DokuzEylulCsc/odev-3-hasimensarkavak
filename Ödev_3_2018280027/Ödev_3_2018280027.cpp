@@ -13,7 +13,7 @@ int main()
     string cvp;
     oku >> cvp;
     int sayac = cvp.length();
-    char cvpa[100];
+    char cvpa[soruSayisi];
     int i = 0, j = 0;
     while (i < sayac)          //Cevap anahtarindaki "," lerden kurtulmak için yaptim.
     {
