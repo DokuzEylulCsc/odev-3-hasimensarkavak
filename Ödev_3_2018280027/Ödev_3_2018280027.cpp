@@ -40,12 +40,12 @@ int main()
     }
    
 
-    int puan[ogrSayisi-1] = {0};
+    int puan[ogrSayisi-1] = {0};    //ogrSayisi while da fazladan 1 arttığı için -1 yapıp kullandım.
     int dogru[ogrSayisi-1] = {0};
     int yanlis[ogrSayisi-1]= { 0 };
     int bos[ogrSayisi-1]= { 0 };
     int x = 0;
-    for (i = 0; i < ogrSayisi-1; i++) // öðrencilerin doðru yaniþ bos sayilarini tuttum.
+    for (i = 0; i < ogrSayisi-1; i++) // ögrencilerin dogru yanlis bos sayilarini tuttum.
     {
 
         x = 0;
@@ -76,7 +76,7 @@ int main()
     int q = 0;
     while (q < ogrSayisi - 1)
     {
-        puan[q] = dogru[q] * 4; //dogrular +4 yanliþlar -1.
+        puan[q] = dogru[q] * 4; //dogrular +4 yanlislar -1.
         puan[q] = puan[q] + yanlis[q] * -1;
 
         if (puan[q] < 0)
@@ -88,7 +88,7 @@ int main()
     }
     int temp;
     string tutucu;
-    for ( i = 0; i < ogrSayisi-1; i++) // siralama yaptirdim ,öðrenci numaralarinida puanlara göre siralattim.
+    for ( i = 0; i < ogrSayisi-1; i++) // siralama yaptirdim ,ögrenci numaralarinida puanlara göre siralattim.
     { 
         for ( j = i + 1; j < ogrSayisi-1; j++) 
         {
@@ -106,7 +106,7 @@ int main()
     int enKucuk = 0;
     for (i = 0; i < ogrSayisi - 1; i++)
     {
-        if (puan[i] < enKucuk) //En düþük puani buldum.
+        if (puan[i] < enKucuk) //En düsük puani buldum.
         {
             enKucuk = puan[i];
         }
